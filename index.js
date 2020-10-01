@@ -15,9 +15,25 @@ checkbox.addEventListener('change', (event) => {
   return (is24Hours = event.target.checked);
 });
 
+const enable24Hours = ()=>{
+ const infoSpan = document.querySelector(".format-info")
+ const date = new Date()
+ const hour = date.getHours()
+ if(hour <= 12){
+ infoSpan.innerText("24 hour format disabled before noon")
+ checkbox.disabled = true
+}else{
+checkbox.disabled = false
+}
+
+
+}
+
 setInterval(getTime, 1000);
 
 window.addEventListener('load', (event) => {
   is24Hours = localStorage.getItem('is24Hours') === 'true' ? true : false;
   checkbox.checked = is24Hours;
+  enable24Hours()
+
 });
