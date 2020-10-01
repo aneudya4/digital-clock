@@ -20,7 +20,7 @@ const enable24Hours = ()=>{
  const date = new Date()
  const hour = date.getHours()
  if(hour <= 12){
- infoSpan.innerText("24 hour format disabled before noon")
+ infoSpan.innerText = "24 hour format disabled before noon"
  checkbox.disabled = true
 }else{
 checkbox.disabled = false
