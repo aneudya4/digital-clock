@@ -4,7 +4,7 @@ let is24Hours = false;
 const getTime = () => {
   const date = new Date();
   const timeOfTheDay = date.getHours() > 12 ? 'PM' : 'AM';
-  let hours = is24Hours ? date.getHours() : date.getHours() - 12;
+  let hours = is24Hours ? date.getHours() : date.getHours() > 12 ? date.getHours() - 12: date.getHours();
   let minutes = (date.getMinutes() < 10 ? '0' : '') + date.getMinutes();
   let seconds = (date.getSeconds() < 10 ? '0' : '') + date.getSeconds();
   timeContainer.textContent = `${hours}:${minutes}:${seconds} ${timeOfTheDay}`;
