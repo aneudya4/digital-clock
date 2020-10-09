@@ -24,7 +24,7 @@ Homepage
 - HTML
 - CSS
 - JavaScript
-  -localStorage
+- localStorage
 
 ## Features
 
